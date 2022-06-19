@@ -1,0 +1,134 @@
+html {
+    background-image: url(astronomy-1867616_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    font-size: 30px;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+}
+.main_content {
+    width: 80%;
+    background-color: #ecebff;
+    margin-left: 10%;
+    margin-top: 3%;
+    border-radius: 15px;
+    font-family: 'Comfortaa', cursive;
+    min-height: 750px;
+}
+.left {
+    font-size: 18px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    height: 400px;
+}
+#yValue {
+    display: block;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 700;
+    padding: .6em 1.4em .5em .8em;
+    height: 40px;
+    width: 90%;
+    max-width: 90%;
+    margin: 0;
+    border: 2px solid black;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    text-align: center;
+    outline:none;
+    margin-left: 15px;
+}
+input[type="text"] {
+    text-align: center;
+    border-radius: 20px;
+    height: 35px;
+    width: 90%;
+    border: 2px solid black;
+}
+.left_1 {
+    margin-top: 35px;
+    width: 50%;
+}
+.left_2 {
+    margin-top: 35px;
+    width: 50%;
+}
+input[name="radio"] {
+    transform:scale(1.5);
+    opacity:0.9;
+    cursor:pointer;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.button_clear {
+    width: 50%;
+}
+.button_send {
+    width: 50%;
+}
+button {
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    width: 200px;
+    border: 2px solid black;
+}
+.right {
+    width: 40%;
+    height: 400px;
+}
+.up {
+    display: flex;
+    justify-content: space-between;
+}
+svg {
+    margin-top: 25px;
+}
+.down {
+    align-content: center;
+    text-align: center;
+    font-size: 18px;
+}
+#history_text {
+    text-align: center;
+}
+#answer {
+    margin-left: auto;
+    margin-right: auto;
+ }
+.result-table-body {
+    margin-left: auto;
+    margin-right: auto;
+}
+.result-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+#alerta {
+    border: 2px solid black;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    width: 200px;
+}

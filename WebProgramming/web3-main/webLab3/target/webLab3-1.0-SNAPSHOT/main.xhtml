@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: karim
+  Date: 02.12.2021
+  Time: 16:11
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:of="http://omnifaces.org/functions"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:custom="http://java.sun.com/jsf/composite/tags">
+
+<h:head>
+    <title>Web Lab #3</title>
+    <h:outputStylesheet library="css" name="main.css"/>
+</h:head>
+
+<h:body>
+    <div id="header">
+        <div id="info">
+            Зинченко Константин Сергеевич <br/>
+            Лабораторная работа №3 <br/>
+            Вариант №15907
+        </div>
+        <div id="link">
+            <h:outputLink value="clock.xhtml">
+                <button id="link_button">Назад</button>
+            </h:outputLink>
+        </div>
+    </div>
+
+    <div class="main_part">
+        <div class="up_side">
+            <div class="left_side">
+                <h:form>
+                    <div class="x_y_side">
+                        <div class="x_side">
+                            Выберите коэффициент R:<br/> <br/>
+                            &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            <h:selectOneMenu value ="#{bean.r}" id="value_r">
+                                <f:selectItem itemValue="1" itemLabel="1"/>
+                                <f:selectItem itemValue="2" itemLabel="2"/>
+                                <f:selectItem itemValue="3" itemLabel="3"/>
+                                <f:selectItem itemValue="4" itemLabel="4"/>
+                                <f:selectItem itemValue="5" itemLabel="5"/>
+                                <f:validateDoubleRange maximum="5.0" minimum="1.0"/>
+                            </h:selectOneMenu>
+                        </div>
+                        <div class="y_side">
+                            Выберите координату Y:<br/> <br/>
+                            <h:panelGrid columns="1">
+                                <h:message styleClass="limitation-label" for="slider" />
+                                <h:outputLabel value=""  styleClass="limitation-label" for="slider" accesskey="y-limitation-label" />
+                                <h:inputText id="slider" value ="#{bean.y}" placeholder="(-2..2)" accesskey="y"  validatorMessage="y должен ∈ (-2,2)">
+                                    <f:validateDoubleRange minimum="-2.0" maximum="2.0"/>
+                                    <f:ajax execute="@parent" render="area"/>
+                                </h:inputText>
+                                <p:slider for="slider" minValue="-2.0" maxValue="2.0" step="0.5" />
+                            </h:panelGrid>
+                        </div>
+                    </div>
+                    <div class="r_service_side">
+                        <div class="r_side">
+                            Выберите координату X: <br/> <br/> <br/>
+                            <h:message styleClass="limitation-label" for="x" />
+                            <h:outputLabel value=""  styleClass="limitation-label" for="x" accesskey="x-limitation-label" />
+                            <h:inputText placeholder="(-3...5)" value ="#{bean.x}" accesskey="x"  validatorMessage="x должен ∈ (-3,5)" id="x">
+                                <f:validateDoubleRange minimum="-3.0" maximum="5.0"/>
+                                <f:ajax execute="@parent" render="area"/>
+                            </h:inputText>
+                        </div>
+                        <div class="service_side">
+                            Кнопки обслуживания: <br/> <br/> <br/>
+                            <h:commandButton id="service_button" value="Отправить" action="#{bean.addDot}" type="submit" update="area table"/>
+                            <h:commandButton action="#{bean.clear}" id="clear_button" value="Очистить" update="area" onclick="clear()" type="clear" />
+                        </div>
+                    </div>
+                </h:form>
+            </div>
+            <div id="right_side">
+                <div jsf:id="area">
+                    <custom:svg-area/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="answer_table">
+        <p:dataTable id="result-table" value="#{bean.resultList}" var="result" emptyMessage="Данных пока нет :)">
+            <p:column>
+                <f:facet name="header">X</f:facet>
+                ${result.x_value}
+            </p:column>
+            <p:column>
+                <f:facet name="header">Y</f:facet>
+                ${result.y_value}
+            </p:column>
+            <p:column>
+                <f:facet name="header">R</f:facet>
+                ${result.r_value}
+            </p:column>
+            <p:column>
+                <f:facet name="header">Результат</f:facet>
+                ${result.result}
+            </p:column>
+            <p:column>
+                <f:facet name="header">Время обработки</f:facet>
+                ${result.requestTime}
+            </p:column>
+        </p:dataTable>
+    </div>
+    <div class="invisible">
+        <h:form>
+            <h:inputText value ="#{bean.x}" styleClass="x"/>
+            <h:inputText value ="#{bean.y}" styleClass="y"/>
+            <h:inputText value ="#{bean.r}" styleClass="r"/>
+            <h:commandButton action="#{bean.addDot}"/>
+        </h:form>
+    </div>
+    <h:outputScript library="js" name="main.js"/>
+</h:body>
+
+</html>

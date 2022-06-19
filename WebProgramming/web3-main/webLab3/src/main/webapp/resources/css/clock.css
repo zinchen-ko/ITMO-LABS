@@ -1,0 +1,36 @@
+html {
+    background-color: whitesmoke;
+    color: black;
+}
+
+#header {
+    display: flex;
+    justify-content: right;
+    width: 40%;
+    min-height: 100px;
+    margin: auto;
+    font-size: 25px;
+}
+
+#link {
+    width: 50%;
+}
+
+#info {
+    width: 50%;
+    text-align: center;
+}
+
+#link_button {
+    width: 40%;
+    min-height: 40%;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-left: 50%;
+}
+
+#clock {
+    font-size: 250px;
+    text-align: center;
+    margin-top: 250px;
+}

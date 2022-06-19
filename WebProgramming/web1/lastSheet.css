@@ -1,0 +1,116 @@
+html {
+    background-image: url(astronomy-1867616_1920.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+header {
+    font-family: 'Comfortaa', cursive;
+    font-size: 30px;
+    color: white;
+}
+.main {
+    margin-left: 10%;
+    width: 80%;
+    min-height: 750px;
+    background-color: #ecebff;
+    margin-top: 30px;
+    border-radius: 15px;
+    font-family: 'Comfortaa', cursive;
+}
+.var {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+}
+.coordinates {
+    width: 40%;
+}
+.var_xy {
+    width: 70%;
+}
+.var_r {
+    width: 30%;
+}
+#X{
+    width: 60%;
+    text-align: center;
+    border-radius: 20px;
+    height: 35px;
+}
+#Y{
+    width: 60%;
+    text-align: center;
+    border-radius: 20px;
+    height: 35px;
+}
+.up_side {
+    display: flex;
+    justify-content: space-between;
+}
+.coordinates {
+    height: 400px;
+}
+input {
+    outline:none;
+    border: 2px solid black;
+    font-size: 15px;
+    color: black;
+}
+select {
+    display: block;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: black;
+    /*line-height: 1.3;*/
+    padding: .6em 1.4em .5em .8em;  height: 40px; width: 100%;
+    max-width: 100%;
+    /*box-sizing: border-box;*/
+    margin: 0;
+    border: 2px solid black;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    text-align: center;
+    outline:none;
+}
+button {
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: white;
+    width: 280px;
+    border: 2px solid black;
+    background-color: white;
+}
+th{
+    border: 2px solid black;
+    width: 380px;
+    height: 33px;
+    border-radius: 20px;
+    background-color: white;
+}
+.under_side {
+    font-family: 'Comfortaa', cursive;
+    font-size: 17px;
+    text-align: center;
+}
+.result_button {
+    margin-top: 44px;
+    background-color: red;
+    background-color: black;
+    background-color: yellow;
+
+}
