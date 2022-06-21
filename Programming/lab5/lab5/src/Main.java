@@ -1,5 +1,4 @@
-package collection;
-
+import collection.StudyGroup;
 import com.google.gson.Gson;
 import instruments.*;
 import java.io.IOException;
@@ -19,8 +18,7 @@ public class Main {
      * {@param args Accepts a file
      */
     public static void main(String[] args) throws IOException {
-        HashMap<Integer, StudyGroup> collection=new HashMap<Integer, StudyGroup>();
-        java.util.Date creationDate = new Date();
+        HashMap<Integer, StudyGroup> collection= new HashMap<>();
         FileWorker fileWorker = new FileWorker(homedir,collection);
         CommandManager commandManager =new CommandManager(collection, fileWorker);
         CommandReader commandRead=new CommandReader(commandManager,fileWorker);
