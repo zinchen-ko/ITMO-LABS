@@ -9,7 +9,7 @@ public class BaseManager {
 //    private static String URL= "jdbc:postgresql://localhost:11902/studs";
     private static String URL= "jdbc:postgresql://pg:5432/studs";
     private String LOGIN = "s291145";
-    private String PASS = "dvj431";
+    private String PASS = "******";
 
     public BaseManager() throws ClassNotFoundException, SQLException {
         this.DB_URL = URL;
